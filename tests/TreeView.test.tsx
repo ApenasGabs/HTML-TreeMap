@@ -29,6 +29,6 @@ describe("TreeView Component", () => {
 
     fireEvent.click(screen.getByText(/Gerar Árvore/));
 
-    expect(screen.queryByRole("pre")).not.toBeInTheDocument();
+    expect(screen.queryByText(/body/, { selector: "pre" })).not.toBeInTheDocument();
   });
 });
