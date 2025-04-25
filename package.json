@@ -34,9 +34,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:lib": "tsc && vite build --mode lib",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "npm run build",
+    "prepare": "npm run build:lib",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
