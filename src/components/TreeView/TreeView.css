@@ -9,18 +9,14 @@
 .tree-view-container textarea {
   width: 100%;
   min-height: 150px;
-
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
   resize: vertical;
   font-family: inherit;
   margin-bottom: 10px;
-
   white-space: pre;
   box-sizing: border-box;
-  resize: vertical;
-
 }
 
 .tree-view-container button {
