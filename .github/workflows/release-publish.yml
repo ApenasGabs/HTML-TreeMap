@@ -4,7 +4,19 @@ on:
   push:
     branches: [main]
     paths:
-      - "package.json" 
+      - "package.json"
+  workflow_dispatch:
+    inputs:
+      force_publish:
+        description: "Forçar publicação mesmo sem alteração de versão"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
 
 jobs:
   check-version:
@@ -46,7 +58,7 @@ jobs:
   release-publish:
     name: Create Release, Tag and Publish to NPM
     needs: check-version
-    if: needs.check-version.outputs.has_changed == 'true'
+    if: needs.check-version.outputs.has_changed == 'true' || github.event_name == 'workflow_dispatch' && github.event.inputs.force_publish == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -67,15 +79,13 @@ jobs:
         run: yarn build:lib
 
       - name: Create GitHub Release and Tag
-        id: create_release
-        uses: actions/create-release@v1
+        run: |
+          VERSION_TAG="v${{ needs.check-version.outputs.version }}"
+          gh release create $VERSION_TAG \
+            --title "$VERSION_TAG" \
+            --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ needs.check-version.outputs.version }}
-          release_name: v${{ needs.check-version.outputs.version }}
-          draft: false
-          prerelease: false
 
       - name: Publish to NPM
         run: yarn publish --non-interactive
