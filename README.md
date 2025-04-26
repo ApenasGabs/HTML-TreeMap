@@ -16,7 +16,7 @@ To use the `TreeView` component in your project, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/html-tree-view.git
+   git clone https://github.com/apenasgabs/html-tree-view.git
    ```
 
 2. Navigate to the project directory:
