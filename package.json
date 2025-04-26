@@ -1,6 +1,6 @@
 {
   "name": "html-tree-view",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React component to visualize HTML structures as a tree",
   "type": "module",
   "main": "./dist/html-tree-view.umd.js",
