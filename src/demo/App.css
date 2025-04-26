@@ -2,6 +2,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  background-color: #282c34;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -11,10 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-
 }
-
-
 
 h1 {
   font-size: 3.2em;
@@ -29,7 +27,8 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  background: #0074d9;
+  background: #2c2c54;
+  background: #0090b5;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -39,7 +38,8 @@ button {
 }
 
 h1 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   font-size: 0.9em;
   padding: 0.2em 0.4em;
   margin: 0;
